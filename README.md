@@ -26,12 +26,24 @@ This repository contains the complete implementation of:
 
 ## Repository structure
 biodiesel_kinetics_case_study/
-├── data/ # Experimental data (Freedman et al., 1986)
-├── notebooks/ # Jupyter notebooks for analysis and plotting
-├── src/ # Reusable Python modules (kinetics, HVO, emissions)
-├── output/ # Generated figures (PNG)
-├── requirements.txt # Python dependencies
-└── README.md # This file
+├── data/
+│   └── experimental_data.csv
+├── notebooks/
+│   ├── 01_data_analysis.ipynb
+│   ├── 02_kinetic_model.ipynb
+│   ├── 03_parameter_estimation.ipynb
+│   ├── 04_sensitivity_analysis.ipynb
+│   ├── 05_HVO_comparison.ipynb
+│   └── 06_HVO_advanced.ipynb
+├── src/
+│   ├── __init__.py
+│   ├── kinetics_model.py
+│   ├── hvo_model.py
+│   └── emissions_analysis.py
+├── output/
+│   └── (tutti i PNG)
+├── requirements.txt
+└── README.md
 
 
 ## How to run
