@@ -1,65 +1,51 @@
-# Biodiesel Kinetic Modeling
+# Biodiesel Kinetic Modeling: FAME vs HVO
 
-## Case study: transesterification of vegetable oil
+![Python](https://img.shields.io/badge/Python-3.9+-blue.svg)
+![Jupyter](https://img.shields.io/badge/Jupyter-Notebook-orange.svg)
+![NumPy](https://img.shields.io/badge/NumPy-1.21+-blue.svg)
+![SciPy](https://img.shields.io/badge/SciPy-1.7+-blue.svg)
+![License](https://img.shields.io/badge/License-Portfolio%20Use-lightgrey.svg)
 
-This project develops a kinetic model for biodiesel production via transesterification of soybean oil, based on experimental data from Freedman et al. (1986). The model describes the three-step consecutive reaction:
+**Case study on the kinetic modeling of biodiesel production from soybean oil (FAME) and hydrotreated vegetable oil (HVO).**
 
-**Triglyceride (TG) → Diglyceride (DG) → Monoglyceride (MG) → Glycerol (GL)**
+This repository contains the complete implementation of:
 
-with the formation of 3 moles of methyl esters (biodiesel) per mole of triglyceride.
+- **FAME model**: three‑step consecutive kinetics (TG → DG → MG → GL) calibrated on experimental data from Freedman et al. (1986).  
+- **HVO model**: hydrodeoxygenation kinetics with Arrhenius temperature dependence, parameterized for different feedstocks (virgin oil, used oil, animal fat).  
+- **Emissions analysis**: simplified Life Cycle Assessment (LCA) to estimate CO₂ emissions and reduction compared to fossil diesel.
 
----
+## Key results
+- FAME calibration: **R² = 0.9967**, **RMSE = 1.89%** (50 °C)
+- Validation at 60 °C: **RMSE = 9.81%**
+- HVO with used oil achieves **57.4% CO₂ reduction** vs fossil diesel
 
-## Objectives
+## Technologies
+- Python 3.9+
+- NumPy, SciPy (odeint, curve_fit), Pandas, Matplotlib
+- Jupyter Notebooks for interactive analysis
 
-- Calibrate kinetic constants (k₁, k₂, k₃) using experimental data
-- Validate the model against data at different temperatures (50°C and 60°C)
-- Perform sensitivity analysis (temperature, methanol/oil ratio)
-- Optimize reaction conditions for maximum yield
-
----
-
-## Project structure
-
+## Repository structure
 biodiesel_kinetics_case_study/
-│
-├── data/
-│ └── experimental_data.csv # Conversion vs time data
-├── notebooks/
-│ └── 01_data_analysis.ipynb # Day 1: data loading and visualization
-├── output/
-│ └── experimental_data.png # Generated plots
-├── src/
-│ ├── init.py
-│ ├── kinetics_model.py # ODE system and solver
-│ └── visualization.py # Plotting functions
-├── requirements.txt
-└── README.md
+├── data/ # Experimental data (Freedman et al., 1986)
+├── notebooks/ # Jupyter notebooks for analysis and plotting
+├── src/ # Reusable Python modules (kinetics, HVO, emissions)
+├── output/ # Generated figures (PNG)
+├── requirements.txt # Python dependencies
+└── README.md # This file
 
-## Data source
 
-Freedman, B., Butterfield, R. O., & Pryde, E. H. (1986). *Transesterification kinetics of soybean oil*. Journal of the American Oil Chemists' Society, 63(10), 1375-1380.
+## How to run
+1. Clone the repository  
+   `git clone https://github.com/AlfredoPeluso/biodiesel-kinetics-modeling.git`
+2. Install dependencies  
+   `pip install -r requirements.txt`
+3. Launch Jupyter and explore the notebooks:  
+   `jupyter notebook`
 
-### Experimental data summary
-
-| Temperature | Points | Time range | Conversion range |
-|-------------|--------|------------|------------------|
-| 50°C | 8 | 0-60 min | 0 → 96% |
-| 60°C | 8 | 0-60 min | 0 → 99% |
+## References
+Freedman, B., Butterfield, R. O., & Pryde, E. H. (1986). *Transesterification kinetics of soybean oil*. Journal of the American Oil Chemists' Society, 63(10), 1375–1380.
 
 ---
 
-## Results (preliminary)
-
-- Initial reaction rate at 50°C: **0.056 %/min**
-- Initial reaction rate at 60°C: **0.084 %/min** (1.5× higher)
-- Complete conversion (>95%) reached in **50 min at 60°C**, **60 min at 50°C**
-
----
-
-## Requirements
-
-Install dependencies with:
-
-```bash
-pip install -r requirements.txt
+**Author:** Alfredo Peluso – [alfredopeluso@outlook.it](mailto:alfredopeluso@outlook.it)  
+**License:** This project is for portfolio demonstration purposes.
