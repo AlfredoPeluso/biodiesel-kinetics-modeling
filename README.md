@@ -25,6 +25,9 @@ This repository contains the complete implementation of:
 - Jupyter Notebooks for interactive analysis
 
 ## Repository structure
+## Repository structure
+
+<pre>
 biodiesel_kinetics_case_study/
 ├── data/
 │   └── experimental_data.csv
@@ -41,9 +44,10 @@ biodiesel_kinetics_case_study/
 │   ├── hvo_model.py
 │   └── emissions_analysis.py
 ├── output/
-│   └── (tutti i PNG)
+│   └── (tutti i PNG generati)
 ├── requirements.txt
 └── README.md
+</pre>
 
 
 ## How to run
