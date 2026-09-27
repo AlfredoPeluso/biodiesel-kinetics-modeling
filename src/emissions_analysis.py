@@ -118,7 +118,7 @@ def plot_emissions_comparison():
                  fontsize=14, fontweight='bold')
     ax.set_xticks(x)
     ax.set_xticklabels(feedstock_labels)
-    ax.legend(loc='upper right', fontsize=10)
+    ax.legend(loc='upper right',  bbox_to_anchor=(0.98, 0.88), fontsize=10)
     ax.grid(True, alpha=0.3, axis='y')
     
     # Add value labels on bars

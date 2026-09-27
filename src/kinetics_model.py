@@ -37,7 +37,7 @@ def transesterification_kinetics(C, t, k):
     dDGdt = k1 * TG - k2 * DG
     dMGdt = k2 * DG - k3 * MG
     dGLdt = k3 * MG
-    dMEdt = 3 * (k1 * TG + k2 * DG + k3 * MG)  # 3 moles ME per mole TG
+    dMEdt = k1 * TG + k2 * DG + k3 * MG  # 3 moles ME per mole TG (totale sui 3 stadi)
     
     return [dTGdt, dDGdt, dMGdt, dGLdt, dMEdt]
 
